@@ -15,5 +15,27 @@ public class Reminder {
         this.pictureId = pictureId;
     }
 
+    public Plant getPlant() {
+        return plant;
+    }
 
+    public void setPlant(Plant plant) {
+        this.plant = plant;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public int getPictureId() {
+        return pictureId;
+    }
+
+    public void setPictureId(int pictureId) {
+        this.pictureId = pictureId;
+    }
 }
