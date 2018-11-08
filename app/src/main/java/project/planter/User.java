@@ -1,9 +1,9 @@
 package project.planter;
 
 public class User {
-    String username;
-    String email;
-    String password;
+    private String username;
+    private String email;
+    private String password;
 
     public User(String username, String email, String password) {
         this.username = username;
