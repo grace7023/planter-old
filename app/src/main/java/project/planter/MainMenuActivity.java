@@ -4,16 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-    private Button newReminderButton;
+    private ImageButton newReminderButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmenu);
+        newReminderButton = findViewById(R.id.NewReminderButton);
     }
 
     private void addNewReminderButtonListener() {
@@ -25,12 +26,10 @@ public class MainMenuActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                addNewReminder();
+                startActivity(new Intent(MainMenuActivity.this, ReminderSetupActivity.class));
             }
         });
     }
 
-    private void addNewReminder() {
-        startActivity(new Intent(MainMenuActivity.this, ReminderSetupActivity.class));
-    }
+
 }
