@@ -6,7 +6,11 @@ public class ReminderManager {
     private ArrayList<Reminder> reminders;
 
     ReminderManager() {
-        this.reminders = new ArrayList<>();
+        reminders = new ArrayList<>();
+    }
+
+    ReminderManager(ArrayList<Reminder> reminders) {
+        this.reminders = reminders;
     }
 
     public void addReminder(Reminder reminder) {
