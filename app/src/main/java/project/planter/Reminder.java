@@ -1,4 +1,19 @@
 package project.planter;
 
 public class Reminder {
+    /**
+     * The plant attached to the reminder.
+     */
+    private Plant plant;
+    private String time;
+    private int pictureId;
+    // TODO: add frequency for watering and fertilizer
+
+    Reminder(Plant plant, String time, int pictureId) {
+        this.plant = plant;
+        this.time = time;
+        this.pictureId = pictureId;
+    }
+
+
 }
