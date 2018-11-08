@@ -3,10 +3,17 @@ package project.planter;
 import java.util.ArrayList;
 
 public class ReminderManager {
+    private User user;
     private ArrayList<Reminder> reminders;
 
-    ReminderManager() {
+    ReminderManager(User user) {
+        this.user = user;
         this.reminders = new ArrayList<>();
+    }
+
+    public ReminderManager(User user, ArrayList<Reminder> reminders) {
+        this.user = user;
+        this.reminders = reminders;
     }
 
     public void addReminder(Reminder reminder) {
@@ -15,6 +22,14 @@ public class ReminderManager {
 
     public void deleteReminder(Reminder reminder) {
         reminders.remove(reminder);
+    }
+
+    public void dupliateReminder(Reminder reminder) {
+        Plant p = reminder.getPlant();
+        String t = reminder.getTime();
+        int i = reminder.getPictureId();
+        Reminder newReminder = new Reminder(p, t, i);
+        reminders.add(newReminder);
     }
 
 
