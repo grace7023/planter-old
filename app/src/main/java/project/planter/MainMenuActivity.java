@@ -15,6 +15,7 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmenu);
         newReminderButton = findViewById(R.id.NewReminderButton);
+        addNewReminderButtonListener();
     }
 
     private void addNewReminderButtonListener() {
