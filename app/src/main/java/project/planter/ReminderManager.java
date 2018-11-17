@@ -1,8 +1,9 @@
 package project.planter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ReminderManager {
+public class ReminderManager implements Serializable {
     private User user;
     private ArrayList<Reminder> reminders;
 
