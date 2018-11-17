@@ -4,16 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ReminderManager implements Serializable {
-    private User user;
     private ArrayList<Reminder> reminders;
 
-    ReminderManager(User user) {
-        this.user = user;
+    ReminderManager() {
         this.reminders = new ArrayList<>();
     }
 
-    public ReminderManager(User user, ArrayList<Reminder> reminders) {
-        this.user = user;
+    ReminderManager(ArrayList<Reminder> reminders) {
         this.reminders = reminders;
     }
 
