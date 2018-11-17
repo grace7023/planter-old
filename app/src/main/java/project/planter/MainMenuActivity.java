@@ -14,7 +14,7 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmenu);
-        ReminderManager.loadFromFile();
+        reminderManager = ReminderManager.loadFromFile();
         newReminderButton = findViewById(R.id.NewReminderButton);
         addNewReminderButtonListener();
     }
