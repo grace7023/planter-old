@@ -55,7 +55,7 @@ public class ReminderManager implements Serializable {
         }
     }
 
-    static ReminderManager loadFromFile() {
+    ReminderManager loadFromFile() {
         ReminderManager reminderManager = new ReminderManager();
         try {
             InputStream inputStream = new FileInputStream(FILE_PATH);

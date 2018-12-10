@@ -22,7 +22,8 @@ public class ReminderSetupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remindersetup);
         createReminder = findViewById(R.id.CreateReminderButton);
-        reminderManager = ReminderManager.loadFromFile();
+        reminderManager = (ReminderManager) getIntent().getSerializableExtra("REMINDER_MANAGER");
+        addCreateReminderButtonListener();
     }
 
     private void addCreateReminderButtonListener() {
@@ -38,13 +39,17 @@ public class ReminderSetupActivity extends AppCompatActivity {
                     Reminder newReminder = returnNewReminder();
                     reminderManager.addReminder(newReminder);
                     reminderManager.saveToFile();
-                    startActivity(new Intent(ReminderSetupActivity.this, MainMenuActivity.class));
-                    finish();
+                    switchToMainMenu();
                 } else {
                     Toast.makeText(ReminderSetupActivity.this, "Field(s) are empty", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    private void switchToMainMenu() {
+        startActivity(new Intent(ReminderSetupActivity.this, MainMenuActivity.class));
+        finish();
     }
 
     private boolean checkEmptyFields() {
@@ -68,5 +73,10 @@ public class ReminderSetupActivity extends AppCompatActivity {
         // TODO: add image picker to app
         int image = 1;
         return new Reminder(p, time, image);
+    }
+
+    @Override
+    public void onBackPressed() {
+        switchToMainMenu();
     }
 }

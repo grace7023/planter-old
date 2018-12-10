@@ -9,12 +9,14 @@ import android.widget.ImageButton;
 public class MainMenuActivity extends AppCompatActivity {
     private ImageButton newReminderButton;
     private ReminderManager reminderManager;
+//    private String currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmenu);
-        reminderManager = ReminderManager.loadFromFile();
+        reminderManager = new ReminderManager();
+        reminderManager = reminderManager.loadFromFile();
         newReminderButton = findViewById(R.id.NewReminderButton);
         addNewReminderButtonListener();
     }
@@ -28,10 +30,19 @@ public class MainMenuActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this, ReminderSetupActivity.class));
+                Intent rmndStpIntent = new Intent(MainMenuActivity.this, ReminderSetupActivity.class);
+                rmndStpIntent.putExtra("REMINDER_MANAGER", reminderManager);
+                startActivity(rmndStpIntent);
+                finish();
             }
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 }
