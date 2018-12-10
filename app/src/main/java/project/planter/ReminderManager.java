@@ -25,7 +25,7 @@ public class ReminderManager implements Serializable {
         this.reminders = reminders;
     }
 
-    public void addReminder(Reminder reminder) {
+    void addReminder(Reminder reminder) {
         reminders.add(reminder);
     }
 
@@ -39,6 +39,12 @@ public class ReminderManager implements Serializable {
         int i = reminder.getPictureId();
         Reminder newReminder = new Reminder(p, t, i);
         reminders.add(newReminder);
+    }
+
+    public void editReminder(Reminder reminder, Plant plant, String time, int pictureId) {
+        reminder.setPlant(plant);
+        reminder.setTime(time);
+        reminder.setPictureId(pictureId);
     }
 
     void saveToFile() {
