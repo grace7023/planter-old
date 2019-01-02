@@ -1,18 +1,22 @@
 package project.planter;
 
-public class Reminder {
+class Reminder {
     /**
      * The plant attached to the reminder.
      */
     private Plant plant;
-    private String time;
     private int pictureId;
+    private String time;
+    private String date;
+    private String waterFreq;
+    private String fertFreq;
     // TODO: add frequency for watering and fertilizer
 
-    Reminder(Plant plant, String time, int pictureId) {
+    Reminder(Plant plant, int pictureId, String time, String date) {
         this.plant = plant;
-        this.time = time;
         this.pictureId = pictureId;
+        this.time = time;
+        this.date = date;
     }
 
     Plant getPlant() {
@@ -38,4 +42,29 @@ public class Reminder {
     void setPictureId(int pictureId) {
         this.pictureId = pictureId;
     }
+
+    String getDate() {
+        return date;
+    }
+
+    void setDate(String date) {
+        this.date = date;
+    }
+
+    String getWaterFreq() {
+        return waterFreq;
+    }
+
+    void setWaterFreq(String waterFreq) {
+        this.waterFreq = waterFreq;
+    }
+
+    String getFertFreq() {
+        return fertFreq;
+    }
+
+    void setFertFreq(String fertFreq) {
+        this.fertFreq = fertFreq;
+    }
+
 }

@@ -35,16 +35,18 @@ public class ReminderManager implements Serializable {
 
     public void dupliateReminder(Reminder reminder) {
         Plant p = reminder.getPlant();
-        String t = reminder.getTime();
         int i = reminder.getPictureId();
-        Reminder newReminder = new Reminder(p, t, i);
+        String t = reminder.getTime();
+        String d = reminder.getDate();
+        Reminder newReminder = new Reminder(p, i, t, d);
         reminders.add(newReminder);
     }
 
-    public void editReminder(Reminder reminder, Plant plant, String time, int pictureId) {
+    public void editReminder(Reminder reminder, Plant plant, String time, int pictureId, String date) {
         reminder.setPlant(plant);
         reminder.setTime(time);
         reminder.setPictureId(pictureId);
+        reminder.setDate(date);
     }
 
     void saveToFile() {

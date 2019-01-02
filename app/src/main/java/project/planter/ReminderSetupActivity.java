@@ -14,6 +14,7 @@ public class ReminderSetupActivity extends AppCompatActivity {
     private EditText plantSpeciesField;
     private EditText plantFertilizerField;
     private EditText timeField;
+    private EditText dateField;
     private ImageButton createReminder;
     private ReminderManager reminderManager;
 
@@ -69,10 +70,11 @@ public class ReminderSetupActivity extends AppCompatActivity {
         String species = plantSpeciesField.getText().toString();
         String fertilizer = plantFertilizerField.getText().toString();
         String time = timeField.getText().toString();
+        String date = dateField.getText().toString();
         Plant p = new Plant(plantName, species, fertilizer);
         // TODO: add image picker to app
         int image = 1;
-        return new Reminder(p, time, image);
+        return new Reminder(p, image, time, date);
     }
 
     @Override
