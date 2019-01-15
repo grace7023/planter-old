@@ -10,7 +10,6 @@ class Reminder {
     private String date;
     private String waterFreq;
     private String fertFreq;
-    // TODO: add frequency for watering and fertilizer
 
     Reminder(Plant plant, int pictureId, String time, String date) {
         this.plant = plant;

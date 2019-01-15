@@ -15,6 +15,8 @@ public class ReminderSetupActivity extends AppCompatActivity {
     private EditText plantFertilizerField;
     private EditText timeField;
     private EditText dateField;
+    private EditText waterFreqField;
+    private EditText fertFreqField;
     private ImageButton createReminder;
     private ReminderManager reminderManager;
 
@@ -54,10 +56,10 @@ public class ReminderSetupActivity extends AppCompatActivity {
     }
 
     private boolean checkEmptyFields() {
+        // Mandatory fields: plant name; time; water freq
         // TODO: add feature to allow certain empty fields.
         return (isEmpty(plantNameField) ||
-                isEmpty(plantSpeciesField) ||
-                isEmpty(plantFertilizerField) ||
+                isEmpty(waterFreqField) ||
                 isEmpty(timeField));
     }
 
