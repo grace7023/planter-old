@@ -1,0 +1,11 @@
+freq:
+- checkbox for repeats? if yes then use wdullaer.materialdatetimepicker
+- else: repeating
+    "repeats every __a__ __b__ on __c__ at __d__"
+    a: an int > 0 (if zero, Toast for error)
+    b: day, week, month, year (should be plural if a > 1)
+    c: if day: weekdays; if month: months; if year nothing.
+    d: time: use wdullaer.materialdatetimepicker
+
+- need alg for calculating next reminder time!!!
+- Reminder should store next reminder time!
