@@ -8,4 +8,7 @@ freq:
     d: time: use wdullaer.materialdatetimepicker
 
 - need alg for calculating next reminder time!!!
+    - what if reminder was turned off?
+    - need boolean active
+    - when become active, need to store next reminder time !
 - Reminder should store next reminder time!
